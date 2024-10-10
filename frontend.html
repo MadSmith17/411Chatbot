@@ -1,35 +1,29 @@
 <!DOCTYPE html>
-<head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
     <title>Resume Chatbot - COSC 411</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-    <h2>Resume Chatbot</h2>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <h1 id="header">Resume Chatbot</h1>
 
-    <div class="messages">
-        <div class="ai message">
-            <div class="bubble">AI chat ....</div>
-        </div>
-        <div class="user-text message">
-            <div class="bubble">User chat ....</div>
-        </div>
-        <div class="ai message">
-            <div class="bubble">AI chat ....</div>
-        </div>
-        <div class="user-text message">
-            <div class="bubble">User chat ....</div>
-        </div>
-        <div class="ai message">
-            <div class="bubble">AI chat ....</div>
-        </div>
-        <div class="user-text message">
-            <div class="bubble">User chat ....</div>
-        </div>
+    <div id="chatBox" class="messages">
+      <!-- Messages will appear here -->
     </div>
 
-    <div class="input-area">
-        <input type="text" placeholder="Enter message here">
-        <button type="submit">Submit</button>
-    </div>
-</body>
+    <form id="messageForm" class="input-area">
+      <input id="messageInput" type="text" placeholder="Enter message here" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script src="js/messages.js"></script>
+  </body>
 </html>
