@@ -3,27 +3,18 @@ import * as decision_tree from './decision_tree_model.js';
 document.addEventListener("DOMContentLoaded", (event) => {
 // Array of questions to ask the user
 const questions = [
-    "Do you like technology?",
-    "Do you enjoy working with numbers and data?",
-    "Do you prefer working with people?",
-    "Do you enjoy solving complex problems?",
-    "Do you consider yourself a creative person?",
-    "Do you enjoy managing others or leading teams?",
-    "Do you prefer working outdoors?",
-    "Do you like helping people directly (e.g., teaching, counseling, healthcare)?",
-    "Do you prefer working with your hands (e.g., building, crafting, repairing)?",
-    "Do you enjoy analyzing and interpreting data?",
-    "Do you prefer structured, routine work?",
-    "Do you enjoy writing or working with words?",
-    "Do you like learning new languages or working in a global environment?",
-    "Do you enjoy performing or public speaking?",
-    "Are you interested in law and justice?",
-    "Do you enjoy working in the medical field or helping patients?",
-    "Do you prefer designing and creating things (e.g., architecture, products, clothes)?",
-    "Do you enjoy programming or writing code?",
-    "Do you like working in a laboratory or with scientific experiments?",
-    "Do you enjoy working in finance or handling money?"
-];
+    "Do you enjoy problem-solving?",               
+    "Do you prefer working with hardware over software?", 
+    "Do you enjoy creating user interfaces?",        
+    "Are you interested in data analysis?",               
+    "Do you prefer working independently?",              
+    "Are you interested in cybersecurity and protecting data?", 
+    "Do you have an interest in artificial intelligence?",      
+    "Do you enjoy optimizing processes and systems?",           
+    "Are you interested in networking and computer systems?",     
+    "Do you enjoy working directly with clients or stakeholders?" 
+]
+
 
 // Initialize variables to keep track of the user's progress
 let currentQuestion = 0;

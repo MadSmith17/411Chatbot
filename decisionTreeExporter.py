@@ -2,43 +2,57 @@ from sklearn.tree import DecisionTreeClassifier
 import m2cgen as m2c
 import numpy as np
 
+
+
+
 # Binary feature matrix (1 = Yes, 0 = No)
 X = np.array([
-    [1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0],  # Software Engineer
-    [1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],  # Data Scientist
-    [0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],  # Project Manager
-    [0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0],  # Teacher
-    [0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],  # Graphic Designer
-    [1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],  # Finance Manager
-    [0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],  # Construction Worker
-    [1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0],  # Nurse
-    [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],  # Police Officer
-    [0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0],  # Journalist
-    [1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0],  # Research Scientist
-    [1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],  # Environmental Scientist
-    [1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0],  # Lab Technician
-    [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0]   # Lawyer
+    # Feature values for each question, followed by Job Title
+    [1, 0, 1, 0, 0, 0, 0, 1, 0, 1],
+    [1, 0, 0, 1, 1, 0, 1, 1, 0, 0], 
+    [1, 1, 0, 0, 1, 0, 0, 1, 1, 0], 
+    [1, 0, 0, 1, 0, 0, 1, 1, 0, 0], 
+    [1, 1, 0, 0, 1, 1, 0, 0, 1, 0], 
+    [1, 0, 1, 1, 1, 0, 1, 0, 0, 1], 
+    [1, 1, 0, 0, 0, 0, 0, 1, 1, 0], 
+    [1, 0, 0, 0, 1, 0, 0, 1, 0, 1], 
+    [0, 0, 1, 0, 0, 0, 0, 0, 0, 1], 
+    [1, 0, 0, 1, 1, 1, 0, 1, 1, 0], 
+    [1, 0, 0, 1, 1, 0, 0, 1, 0, 0], 
+    [1, 0, 0, 0, 1, 0, 0, 1, 0, 0],
+    [1, 1, 0, 0, 1, 1, 0, 1, 1, 0],
+    [1, 0, 0, 1, 1, 0, 1, 1, 0, 0], 
+    [1, 0, 1, 0, 1, 0, 0, 0, 0, 1],
+    [1, 0, 0, 1, 0, 0, 1, 1, 0, 0],
+    [1, 0, 0, 0, 1, 1, 0, 1, 0, 1],
+    [1, 0, 0, 1, 0, 0, 0, 1, 1, 0],
+    [1, 0, 1, 1, 0, 0, 0, 1, 0, 1]
 ])
 
 y = [
-    "Software Engineer",
-    "Data Scientist",
-    "Project Manager",
-    "Teacher",
-    "Graphic Designer",
-    "Finance Manager",
-    "Construction Worker",
-    "Nurse",
-    "Police Officer",
-    "Journalist",
+    # Feature values for each question, followed by Job Title
+    "Front-End Developer",
+     "Data Scientist",
+    "Network Engineer",
+     "Machine Learning Engineer",
+    "Cybersecurity Specialist",
+    "Full Stack Developer",
+     "Computer Hardware Engineer",
+    "Backend Developer",
+    "UX/UI Designer",
+    "Systems Administrator",
+    "Database Administrator",
+     "Software Developer",
+     "Security Analyst",
     "Research Scientist",
-    "Environmental Scientist",
-    "Lab Technician",
-    "Lawyer"
+     "Product Manager",
+    "AI Engineer",
+    "Ethical Hacker",
+    "IT Consultant",
+    "Solutions Architect"
 ]
 
-
-# Train the DecisionTreeClassifier
+# Step 2: Train the decision tree classifier
 clf = DecisionTreeClassifier()
 clf.fit(X, y)
 
