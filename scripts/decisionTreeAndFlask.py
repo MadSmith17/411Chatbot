@@ -65,7 +65,7 @@ clf.fit(X, y)
 
 #print("Decision tree model exported to JavaScript successfully.")
 
-joblib.dump(clf, 'decision_tree_model.joblib')
+#joblib.dump(clf, 'decision_tree_model.joblib')
 
 #start up flask server for decision tree communicatiion with js script
 app = Flask(__name__)
