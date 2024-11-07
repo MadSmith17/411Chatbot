@@ -45,7 +45,10 @@ async function predictCareer(answers) {
     });
     const result = await response.text();
     document.querySelector(".question h2").textContent = 'Predicted Career: ' + result;
-    
+
+    //hide the buttons for now
+    nextPageButton.style.display = "none";
+    nextPageButton2.style.display = "none"; 
     
             //const result = decision_tree.predict(answers);  // Use the JavaScript model to predict
     //document.getElementById("nextPageButton").style.display = "none";

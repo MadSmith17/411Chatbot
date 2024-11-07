@@ -1,10 +1,9 @@
 from sklearn.tree import DecisionTreeClassifier
 import numpy as np
-import joblib
 from flask_cors import CORS
 from flask import Flask, request, jsonify
 
-
+#Run this code before opening/Usign frontend.html to start server
 
 # Binary feature matrix (1 = Yes, 0 = No)
 X = np.array([
