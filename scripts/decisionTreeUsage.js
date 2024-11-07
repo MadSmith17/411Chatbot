@@ -1,4 +1,4 @@
-import * as decision_tree from './decision_tree_model.js';
+
 
 document.addEventListener("DOMContentLoaded", (event) => {
 // Array of questions to ask the user
@@ -32,12 +32,25 @@ function displayQuestion() {
 }
 
 // Make a prediction using the decision tree in JavaScript
-function predictCareer(answers) {
+async function predictCareer(answers) {
     console.log(answers)
-    const result = decision_tree.predict(answers);  // Use the JavaScript model to predict
-    document.getElementById("nextPageButton").style.display = "none";
-    document.getElementById("nextPageButton2").style.display = "none";
-    document.querySelector(".question h2").textContent = "Your suitable career path is: " + result;
+
+    //se nd response to flask app and get career choice
+    const response = await fetch('http://127.0.0.1:5000/predict', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ answers: answers })
+    });
+    const result = await response.text();
+    document.querySelector(".question h2").textContent = 'Predicted Career: ' + result;
+    
+    
+            //const result = decision_tree.predict(answers);  // Use the JavaScript model to predict
+    //document.getElementById("nextPageButton").style.display = "none";
+    //document.getElementById("nextPageButton2").style.display = "none";
+    //document.querySelector(".question h2").textContent = "Your suitable career path is: " + result;
 }
 
 // Handle Yes/No button clicks

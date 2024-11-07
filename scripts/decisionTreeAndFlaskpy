@@ -1,7 +1,8 @@
 from sklearn.tree import DecisionTreeClassifier
-import m2cgen as m2c
 import numpy as np
-
+import joblib
+from flask_cors import CORS
+from flask import Flask, request, jsonify
 
 
 
@@ -56,12 +57,27 @@ y = [
 clf = DecisionTreeClassifier()
 clf.fit(X, y)
 
-# Export the trained model to JavaScript
-js_code = m2c.export_to_javascript(clf)
 
 
 # Save the JavaScript code to a file
-with open('decision_tree_model.js', 'w') as f:
-    f.write(js_code)
+#with open('decision_tree_model.js', 'w') as f:
+    #f.write(js_code)
 
-print("Decision tree model exported to JavaScript successfully.")
+#print("Decision tree model exported to JavaScript successfully.")
+
+joblib.dump(clf, 'decision_tree_model.joblib')
+
+#start up flask server for decision tree communicatiion with js script
+app = Flask(__name__)
+CORS(app)
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.get_json()
+    answers = data['answers']
+    prediction = clf.predict([answers])
+    return  prediction[0]
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
