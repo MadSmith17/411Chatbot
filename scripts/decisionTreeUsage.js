@@ -63,6 +63,10 @@ function answerQuestion(answer) {
     displayQuestion();  // Display the next question
 }
 
+const homeButton = document.querySelector(".HomeButton");
+homeButton.addEventListener('click', function() {
+    location.reload();
+});
 // Select the button using its ID
 const nextPageButton = document.getElementById('nextPageButton');
 const nextPageButton2 = document.getElementById('nextPageButton2');

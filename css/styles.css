@@ -131,3 +131,7 @@ td {
 h1 {
     text-align: center;
 }
+.HomeButton{
+    text-align: left;
+    color: purple;
+}
